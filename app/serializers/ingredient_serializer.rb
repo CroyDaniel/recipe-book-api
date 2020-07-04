@@ -1,17 +1,19 @@
 # == Schema Information
 #
-# Table name: games
+# Table name: ingredients
 #
 #  id         :integer          not null, primary key
 #  name       :string           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  game_id    :integer          not null
 #
 # Indexes
 #
-#  index_games_on_name  (name) UNIQUE
+#  index_ingredients_on_game_id           (game_id)
+#  index_ingredients_on_name_and_game_id  (name,game_id) UNIQUE
 #
-class GameSerializer < ActiveModel::Serializer
+class IngredientSerializer < ActiveModel::Serializer
   attributes :id,
              :name
 end
