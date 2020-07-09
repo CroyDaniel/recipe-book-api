@@ -18,4 +18,5 @@ class RecipeSerializer < ActiveModel::Serializer
              :name
 
   belongs_to :game
+  has_many :recipe_ingredients
 end
